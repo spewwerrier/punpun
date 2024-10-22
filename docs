@@ -1,0 +1,23 @@
+A NOTE ON LOAD BALANCER
+A layer 4 load balancer is a device that manages traffic at the transport layer of the OSI model by routing it based on network information, such as IP addresses and port numbers. 
+Layer 4 load balancers are often hardware devices that run proprietary software. They work by:
+Network Address Translation (NAT)
+Changing the destination IP address from the load balancer's to the content server's
+Changing the source address
+Changing the source address recorded in the packet header from the server's IP address to the load balancer's 
+Layer 4 load balancers are effective for simple load balancing because they can forward messages quickly, efficiently, and securely without inspecting or decrypting them. However, they can't make content-based decisions, so they rely on simple algorithms like round-robin routing. 
+Layer 4 load balancers are ideal for applications that need session persistence or stateful communication. 
+
+
+Loadbalancer takes an request 
+
+Server1 is located on http://localhost:4444
+Server2 is located on http://localhost:4445
+
+Our load balancer (reverse proxy) is located on http://localhost:3000
+
+
+request come to http://localhost:3000
+forwards the request to Server1 or Server2
+get the result
+
